@@ -2,7 +2,7 @@
 
 This project is to help programmer have an idea on how create a software to interact with any database.
 
-This software allows any user to interact with MySQL database. It allows the user  to communicate with the database to perform tasks, functions, and queries with data.
+This software allows any user to interact with MySQL database. It allows the user to communicate with the database to perform tasks, functions, and queries with data.
 
 This software entends to make SQL data maniplution esaer to any user, regardless of their level of knowledge.
 
