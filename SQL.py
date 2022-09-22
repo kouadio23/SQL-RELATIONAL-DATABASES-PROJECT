@@ -35,5 +35,10 @@ while choice != "8":
     for x in mycursor.fetchall():
       print(x)
       print()
+ # TABLE CONTENT
+  elif  choice == "2":
+    sub_choice = None
+    while sub_choice != "quit":
+      sub_choice = input("Enter Table Name :'blood_bank; blood_bank_has_staff; donor; patient; staff; staff_department; staff_has_staff_departement' and type quit to exit: ")
 
  
