@@ -124,3 +124,12 @@ while choice != "7":
           print(x) 
           print() 
 
+
+#  INSERT
+  elif choice == '3':
+    mydb = mysql.connector.connect(host="localhost",user="root",password="KKF23091989kkf",database="blood_donation_database")
+    mycursor = mydb.cursor()
+    table_name = input('Which table to insert into? ')
+
+
+
