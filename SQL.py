@@ -173,7 +173,7 @@ while choice != "7":
       gender = ("gender")
       medical_condition = ("medical condition")
       values = (id, fname, lname, dob, address, phone_number, gender, medical_condition)
-      sql = "INSERT INTO department (id, fname, lname, dob, address, phone_number, gender, medical_condition) VALUES (%s, %s)"
+      sql = "INSERT INTO department (id, fname, lname, dob, address, phone_number, gender, medical_condition) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
       values = (id, fname, lname, dob, address, phone_number, gender, medical_condition)
       mycursor.execute(sql, values)
       mydb.commit()
