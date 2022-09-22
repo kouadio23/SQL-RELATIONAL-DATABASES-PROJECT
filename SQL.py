@@ -132,4 +132,19 @@ while choice != "7":
     table_name = input('Which table to insert into? ')
 
 
-
+# insert into blood_bank 
+    if table_name == "blood_bank":
+      "id", "blood_group", "date_of_prelevement", "comment", "Patient_id", "Donor_id"
+      id = input('blood_id: ')
+      blood_group = input('blood group: ')
+      date_of_prelevement = input("date of prelevemnt")
+      comment = ("comment")
+      Patient_id = ("Patient ID")
+      Donor_id = ("Donor ID")
+      values = (id, blood_group, date_of_prelevement, comment, Patient_id, Donor_id)
+      sql = "INSERT INTO billing (idbilling, patient_name) VALUES (%s, %s)"
+      values = (id, blood_group, date_of_prelevement, comment, Patient_id, Donor_id)
+      mycursor.execute(sql, values)
+      mydb.commit()
+      print(mycursor.rowcount, "record inserted.")
+      print()
