@@ -154,7 +154,7 @@ while choice != "7":
       blood_bank_id = input('blood bank ID: ')
       staff_id = input('Staff ID: ')
       values = (blood_bank_id, staff_id)
-      sql = "INSERT INTO department (blood_bank_id, staff_id) VALUES (%s, %s)"
+      sql = "INSERT INTO blood_bank_has_staff (blood_bank_id, staff_id) VALUES (%s, %s)"
       values = (blood_bank_id, staff_id)
       mycursor.execute(sql, values)
       mydb.commit()
@@ -173,9 +173,40 @@ while choice != "7":
       gender = ("gender")
       medical_condition = ("medical condition")
       values = (id, fname, lname, dob, address, phone_number, gender, medical_condition)
-      sql = "INSERT INTO department (id, fname, lname, dob, address, phone_number, gender, medical_condition) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
+      sql = "INSERT INTO donor (id, fname, lname, dob, address, phone_number, gender, medical_condition) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
       values = (id, fname, lname, dob, address, phone_number, gender, medical_condition)
       mycursor.execute(sql, values)
       mydb.commit()
       print(mycursor.rowcount, "record inserted.")
       print()
+
+
+# inserting in patient
+    elif  table_name == "patient":
+      blood_bank_id = input('blood bank ID: ')
+      staff_id = input('Staff ID: ')
+      values = (id, fname, lname, dob, blood_group, address, phone_number, gender, medical_condition)
+      sql = "INSERT INTO patient (id, fname, lname, dob, blood_group, address, phone_number, gender, medical_condition) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
+      values = (id, fname, lname, dob, blood_group, address, phone_number, gender, medical_condition)
+      mycursor.execute(sql, values)
+      mydb.commit()
+      print(mycursor.rowcount, "record inserted.")
+      print()
+
+
+# inserting in staff
+    elif  table_name == "staff":
+      id = input('staff ID: ')
+      fname = input('first name: ')
+      lname = input("last name")
+      dob = ("Day of birth")
+      addrress = ("address")
+      phone_number = ("phone number")
+      values = (id, fname, lname, dob, address, phone_number)
+      sql = "INSERT INTO staff (id, fname, lname, dob, address, phone_number) VALUES (%s, %s, %s, %s, %s, %s)"
+      values = (id, fname, lname, dob, address, phone_number)
+      mycursor.execute(sql, values)
+      mydb.commit()
+      print(mycursor.rowcount, "record inserted.")
+      print()
+
