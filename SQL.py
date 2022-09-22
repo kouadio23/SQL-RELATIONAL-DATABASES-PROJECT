@@ -148,3 +148,15 @@ while choice != "7":
       mydb.commit()
       print(mycursor.rowcount, "record inserted.")
       print()
+
+# inserting in blood_bank_has_staff
+    elif  table_name == "blood_bank_has_staff":
+      blood_bank_id = input('blood bank ID: ')
+      staff_id = input('Staff ID: ')
+      values = (blood_bank_id, staff_id)
+      sql = "INSERT INTO department (blood_bank_id, staff_id) VALUES (%s, %s)"
+      values = (blood_bank_id, staff_id)
+      mycursor.execute(sql, values)
+      mydb.commit()
+      print(mycursor.rowcount, "record inserted.")
+      print()
