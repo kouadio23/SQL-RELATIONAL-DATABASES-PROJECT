@@ -23,4 +23,17 @@ while choice != "8":
   choice = input("Please choose number and press enter: ")
   print()
 
+  if choice == "1":
+    # Connect to MySql database
+    mydb = mysql.connector.connect(host="localhost",user="root",password="KKF23091989kkf",database="blood_donation_database")
+
+    mycursor = mydb.cursor()
+    # show tables in blood_donation_database database.
+    mycursor.execute("SHOW TABLES FROM `blood_donation_database`")
+    headers = ["Table Name"]
+    print(tabulate(list(mycursor), headers, tablefmt="grid"))
+    for x in mycursor.fetchall():
+      print(x)
+      print()
+
  
