@@ -142,7 +142,7 @@ while choice != "7":
       Patient_id = ("Patient ID")
       Donor_id = ("Donor ID")
       values = (id, blood_group, date_of_prelevement, comment, Patient_id, Donor_id)
-      sql = "INSERT INTO billing (idbilling, patient_name) VALUES (%s, %s)"
+      sql = "INSERT INTO blood_bank (id, blood_group, date_of_prelevement, comment, Patient_id, Donor_id) VALUES (%s, %s ,%s ,%s ,%s ,%s)"
       values = (id, blood_group, date_of_prelevement, comment, Patient_id, Donor_id)
       mycursor.execute(sql, values)
       mydb.commit()
