@@ -137,7 +137,7 @@ while choice != "7":
       "id", "blood_group", "date_of_prelevement", "comment", "Patient_id", "Donor_id"
       id = input('blood_id: ')
       blood_group = input('blood group: ')
-      date_of_prelevement = input("date of prelevemnt")
+      date_of_prelevement = input("date of prelevemnt (yyy-MM-DD:")
       comment = ("comment")
       Patient_id = ("Patient ID")
       Donor_id = ("Donor ID")
@@ -167,9 +167,9 @@ while choice != "7":
       id = input('donor ID: ')
       fname = input('first name: ')
       lname = input("last name: ")
-      dob = ("day of birth: ")
+      dob = ("day of birth (yyy-MM-DD: ")
       address = ("address")
-      phone_number = ("Phone number")
+      phone_number = ("Phone number (000-000-0000):")
       gender = ("gender")
       medical_condition = ("medical condition")
       values = (id, fname, lname, dob, address, phone_number, gender, medical_condition)
@@ -183,8 +183,15 @@ while choice != "7":
 
 # inserting in patient
     elif  table_name == "patient":
-      blood_bank_id = input('blood bank ID: ')
-      staff_id = input('Staff ID: ')
+      id = input("patient ID:")
+      fname = input("first name: ")
+      lname = input("last name: ")
+      dob = ("day of birth (yyy-MM-DD: ")
+      blood_group = input("Blood group: ")
+      address = ("address")
+      phone_number = ("Phone number (000-000-0000):")
+      gender = ("gender")
+      medical_condition = ("medical condition")
       values = (id, fname, lname, dob, blood_group, address, phone_number, gender, medical_condition)
       sql = "INSERT INTO patient (id, fname, lname, dob, blood_group, address, phone_number, gender, medical_condition) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
       values = (id, fname, lname, dob, blood_group, address, phone_number, gender, medical_condition)
@@ -199,12 +206,37 @@ while choice != "7":
       id = input('staff ID: ')
       fname = input('first name: ')
       lname = input("last name")
-      dob = ("Day of birth")
+      dob = ("Day of birth (yyy-MM-DD:")
       addrress = ("address")
-      phone_number = ("phone number")
+      phone_number = ("phone number (000-000-0000):")
       values = (id, fname, lname, dob, address, phone_number)
       sql = "INSERT INTO staff (id, fname, lname, dob, address, phone_number) VALUES (%s, %s, %s, %s, %s, %s)"
       values = (id, fname, lname, dob, address, phone_number)
+      mycursor.execute(sql, values)
+      mydb.commit()
+      print(mycursor.rowcount, "record inserted.")
+      print()
+
+      # inserting in staff_departement
+
+    elif  table_name == "staff":
+      id = input('staff ID: ')
+      category_description = input("Category description")
+      values = (id, category_description)
+      sql = "INSERT INTO staff (id, category_description) VALUES (%s, %s)"
+      values = (id, category_description)
+      mycursor.execute(sql, values)
+      mydb.commit()
+      print(mycursor.rowcount, "record inserted.")
+      print()
+
+      # inserting in staff_as_staff_department
+    elif  table_name == "staff":
+      staff_id = input('staff ID: ')
+      staff_departement_id = input('staff departement id: ')
+      values = (staff_id, staff_departement_id)
+      sql = "INSERT INTO staff (staff_id, staff_departement_id) VALUES (%s, %s)"
+      values = (staff_id, staff_departement_id)
       mycursor.execute(sql, values)
       mydb.commit()
       print(mycursor.rowcount, "record inserted.")
