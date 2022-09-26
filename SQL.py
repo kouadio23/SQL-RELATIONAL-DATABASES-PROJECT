@@ -311,3 +311,16 @@ while choice != "7":
       mydb.commit()
       print(mycursor.rowcount, "record(s) deleted.")
       print()
+
+
+       # Drop table
+  elif choice == "5":
+    mydb = mysql.connector.connect(host="localhost",user="root",password="KKF23091989kkf",database="blood_donation_database")
+    mycursor = mydb.cursor()
+    table_drop = input('Which table to drop? Please consult Table Names: ')
+    sql = f"DROP TABLE {table_drop}"
+    mycursor.execute(sql)
+    print(f"{table_drop} Droped")
+    print()
+
+    
