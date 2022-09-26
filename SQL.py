@@ -242,3 +242,72 @@ while choice != "7":
       print(mycursor.rowcount, "record inserted.")
       print()
 
+      # DELETE Row 
+  elif choice == "4":
+    mydb = mysql.connector.connect(host="localhost",user="root",password="KKF23091989kkf",database="blood_donation_database")
+    mycursor = mydb.cursor()
+    table_delete = input('Which table to delete From? ')
+
+  # deleting in blood_bank table
+    if table_delete == 'blood_bank':
+      blood = input('Blood_bank ID: ')
+      sql = f"DELETE FROM blood_bank WHERE id = {blood}"
+      mycursor.execute(sql)
+      mydb.commit()
+      print(mycursor.rowcount, "record(s) deleted.")
+      print()
+    
+    # deleting in blood_bank_has_staff table
+    elif table_delete == 'blood_bank_has_staff':
+      bbs = input('blood_bank_has_staff ID: ')
+      sql = f"DELETE FROM blood_bank_has_staff WHERE blood_bank_id = {bbs}"
+      mycursor.execute(sql)
+      mydb.commit()
+      print(mycursor.rowcount, "record(s) deleted.")
+      print()
+
+      # deleting in donor table
+    elif table_delete == 'donor':
+      do = input('donor ID: ')
+      sql = f"DELETE FROM donor WHERE id = {do}"
+      mycursor.execute(sql)
+      mydb.commit()
+      print(mycursor.rowcount, "record(s) deleted.")
+      print()   
+
+      # deleting in patient table
+    elif table_delete == 'patient':
+      pat = input('patient ID: ')
+      sql = f"DELETE FROM patient WHERE id = {pat}"
+      mycursor.execute(sql)
+      mydb.commit()
+      print(mycursor.rowcount, "record(s) deleted.")
+      print()
+
+
+       # deleting in staff table
+    elif table_delete == 'staff':
+      staf = input('staff ID: ')
+      sql = f"DELETE FROM staff WHERE id = {staf}"
+      mycursor.execute(sql)
+      mydb.commit()
+      print(mycursor.rowcount, "record(s) deleted.")
+      print()
+
+      # deleting in staff_departement table
+    elif table_delete == 'staff_departement':
+      sta_de = input('staff_departement ID: ')
+      sql = f"DELETE FROM staff_departement WHERE id = {sta_de}"
+      mycursor.execute(sql)
+      mydb.commit()
+      print(mycursor.rowcount, "record(s) deleted.")
+      print()   
+
+      # deleting in staff_has_staff_departement table
+    elif table_delete == 'staff_has_staff_departement':
+      stade = input('staff_has_staff_departement ID: ')
+      sql = f"DELETE FROM staff_has_staff_departement WHERE id = {stade}"
+      mycursor.execute(sql)
+      mydb.commit()
+      print(mycursor.rowcount, "record(s) deleted.")
+      print()
