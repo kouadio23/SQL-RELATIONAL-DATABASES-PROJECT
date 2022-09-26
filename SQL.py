@@ -323,4 +323,18 @@ while choice != "7":
     print(f"{table_drop} Droped")
     print()
 
-    
+     # Update Table
+  elif choice == "6":
+    mydb = mysql.connector.connect(host="localhost",user="root",password="KKF23091989kkf",database="blood_donation_database")
+    mycursor = mydb.cursor()
+    # prompt the user for info to update
+    table_update = input('Which table to update from? ')
+    column_update = input('which column to update? ')
+    value_update = input('New Value(s): ')
+    old_value = input('Old value(s): ')
+    # run the query
+    sql = f"UPDATE {table_update} SET {column_update} = '{value_update}' WHERE {column_update} = '{old_value}'"
+    mycursor.execute(sql)
+    mydb.commit()
+    print(mycursor.rowcount, "record(s) affected")
+    print()
