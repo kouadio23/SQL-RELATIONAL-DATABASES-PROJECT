@@ -134,13 +134,12 @@ while choice != "7":
 
 # insert into blood_bank 
     if table_name == "blood_bank":
-      "id", "blood_group", "date_of_prelevement", "comment", "Patient_id", "Donor_id"
       id = input('blood_id: ')
       blood_group = input('blood group: ')
       date_of_prelevement = input("date of prelevemnt (yyy-MM-DD:")
-      comment = ("comment")
-      Patient_id = ("Patient ID")
-      Donor_id = ("Donor ID")
+      comment = input("comment: ")
+      Patient_id = input("Patient ID: ")
+      Donor_id = input("Donor ID: ")
       values = (id, blood_group, date_of_prelevement, comment, Patient_id, Donor_id)
       sql = "INSERT INTO blood_bank (id, blood_group, date_of_prelevement, comment, Patient_id, Donor_id) VALUES (%s, %s ,%s ,%s ,%s ,%s)"
       values = (id, blood_group, date_of_prelevement, comment, Patient_id, Donor_id)
@@ -150,7 +149,7 @@ while choice != "7":
       print()
 
 # inserting in blood_bank_has_staff
-    elif  table_name == "blood_bank_has_staff":
+    elif table_name == "blood_bank_has_staff":
       blood_bank_id = input('blood bank ID: ')
       staff_id = input('Staff ID: ')
       values = (blood_bank_id, staff_id)
@@ -162,16 +161,16 @@ while choice != "7":
       print()
 
 # inserting in donor
-    elif  table_name == "donor":
+    elif table_name == "donor":
 
       id = input('donor ID: ')
       fname = input('first name: ')
       lname = input("last name: ")
-      dob = ("day of birth (yyy-MM-DD: ")
-      address = ("address")
-      phone_number = ("Phone number (000-000-0000):")
-      gender = ("gender")
-      medical_condition = ("medical condition")
+      dob = input("day of birth (yyy-MM-DD: ")
+      address = input("address: ")
+      phone_number = input("Phone number (000-000-0000):")
+      gender = input("gender: ")
+      medical_condition = input("medical condition: ")
       values = (id, fname, lname, dob, address, phone_number, gender, medical_condition)
       sql = "INSERT INTO donor (id, fname, lname, dob, address, phone_number, gender, medical_condition) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
       values = (id, fname, lname, dob, address, phone_number, gender, medical_condition)
@@ -182,16 +181,16 @@ while choice != "7":
 
 
 # inserting in patient
-    elif  table_name == "patient":
+    elif table_name == "patient":
       id = input("patient ID:")
       fname = input("first name: ")
       lname = input("last name: ")
-      dob = ("day of birth (yyy-MM-DD: ")
+      dob = input("day of birth (yyy-MM-DD: ")
       blood_group = input("Blood group: ")
-      address = ("address")
-      phone_number = ("Phone number (000-000-0000):")
-      gender = ("gender")
-      medical_condition = ("medical condition")
+      address = input("address: ")
+      phone_number = input("Phone number (000-000-0000):")
+      gender = input("gender: ")
+      medical_condition = input("medical condition: ")
       values = (id, fname, lname, dob, blood_group, address, phone_number, gender, medical_condition)
       sql = "INSERT INTO patient (id, fname, lname, dob, blood_group, address, phone_number, gender, medical_condition) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
       values = (id, fname, lname, dob, blood_group, address, phone_number, gender, medical_condition)
@@ -202,13 +201,13 @@ while choice != "7":
 
 
 # inserting in staff
-    elif  table_name == "staff":
+    elif table_name == "staff":
       id = input('staff ID: ')
       fname = input('first name: ')
       lname = input("last name")
-      dob = ("Day of birth (yyy-MM-DD:")
-      addrress = ("address")
-      phone_number = ("phone number (000-000-0000):")
+      dob = input("Day of birth (yyy-MM-DD:")
+      addrress = input("address: ")
+      phone_number = input("phone number (000-000-0000):")
       values = (id, fname, lname, dob, address, phone_number)
       sql = "INSERT INTO staff (id, fname, lname, dob, address, phone_number) VALUES (%s, %s, %s, %s, %s, %s)"
       values = (id, fname, lname, dob, address, phone_number)
@@ -219,9 +218,9 @@ while choice != "7":
 
       # inserting in staff_departement
 
-    elif  table_name == "staff":
+    elif table_name == "staff":
       id = input('staff ID: ')
-      category_description = input("Category description")
+      category_description = input("Category description: ")
       values = (id, category_description)
       sql = "INSERT INTO staff (id, category_description) VALUES (%s, %s)"
       values = (id, category_description)
