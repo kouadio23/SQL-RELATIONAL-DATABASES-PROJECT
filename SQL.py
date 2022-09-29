@@ -53,7 +53,7 @@ while choice != "7":
           print() 
 
 # blood_bank_has_staff  content
-      elif sub_choice == "blood_bank_has_staff ":
+      elif sub_choice == "blood_bank_has_staff":
         mydb = mysql.connector.connect(host="localhost",user="root",password="KKF23091989kkf",database="blood_donation_database")
         mycursor = mydb.cursor()
         mycursor.execute("SELECT * FROM blood_bank_has_staff ")
@@ -64,7 +64,7 @@ while choice != "7":
           print() 
 
 #  donor content
-      elif sub_choice == "donor ":
+      elif sub_choice == "donor":
         mydb = mysql.connector.connect(host="localhost",user="root",password="KKF23091989kkf",database="blood_donation_database")
         mycursor = mydb.cursor()
         mycursor.execute("SELECT * FROM donor ")
@@ -76,7 +76,7 @@ while choice != "7":
 
 
 #  patient  content
-      elif sub_choice == "patient  ":
+      elif sub_choice == "patient":
         mydb = mysql.connector.connect(host="localhost",user="root",password="KKF23091989kkf",database="blood_donation_database")
         mycursor = mydb.cursor()
         mycursor.execute("SELECT * FROM patient  ")
@@ -89,7 +89,7 @@ while choice != "7":
 
 
 #  staff  content
-      elif sub_choice == "staff  ":
+      elif sub_choice == "staff":
         mydb = mysql.connector.connect(host="localhost",user="root",password="KKF23091989kkf",database="blood_donation_database")
         mycursor = mydb.cursor()
         mycursor.execute("SELECT * FROM staff  ")
@@ -101,7 +101,7 @@ while choice != "7":
 
 
 #  staff_departement  content
-      elif sub_choice == "staff_departement ":
+      elif sub_choice == "staff_departement":
         mydb = mysql.connector.connect(host="localhost",user="root",password="KKF23091989kkf",database="blood_donation_database")
         mycursor = mydb.cursor()
         mycursor.execute("SELECT * FROM staff_departement  ")
@@ -114,7 +114,7 @@ while choice != "7":
 
 
 #  staff_has_staff_departement content
-      elif sub_choice == "staff_has_staff_departement ":
+      elif sub_choice == "staff_has_staff_departement":
         mydb = mysql.connector.connect(host="localhost",user="root",password="KKF23091989kkf",database="blood_donation_database")
         mycursor = mydb.cursor()
         mycursor.execute("SELECT * FROM staff_has_staff_departement ")
@@ -230,7 +230,7 @@ while choice != "7":
       print()
 
       # inserting in staff_as_staff_department
-    elif  table_name == "staff":
+    elif  table_name == "staff_as_staff_department":
       staff_id = input('staff ID: ')
       staff_departement_id = input('staff departement id: ')
       values = (staff_id, staff_departement_id)
@@ -248,7 +248,7 @@ while choice != "7":
     table_delete = input('Which table to delete From? ')
 
   # deleting in blood_bank table
-    if table_delete == 'blood_bank':
+    if table_delete == "blood_bank":
       blood = input('Blood_bank ID: ')
       sql = f"DELETE FROM blood_bank WHERE id = {blood}"
       mycursor.execute(sql)
@@ -332,7 +332,7 @@ while choice != "7":
     value_update = input('New Value(s): ')
     old_value = input('Old value(s): ')
     # run the query
-    sql = f"UPDATE {table_update} SET {column_update} = '{value_update}' WHERE {column_update} = '{old_value}'"
+    sql = f"UPDATE {table_update} SET {column_update} = {value_update} WHERE '{column_update}' = '{old_value}'"
     mycursor.execute(sql)
     mydb.commit()
     print(mycursor.rowcount, "record(s) affected")
