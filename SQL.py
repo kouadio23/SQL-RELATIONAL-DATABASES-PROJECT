@@ -2,7 +2,7 @@ from tabulate import tabulate
 import mysql.connector
 
 print()
-print("WELCOME TO THE MySQL HOSPITAL DATABASE")
+print("WELCOME TO THE MySQL blood donation database")
 print("PLEASE CHOOSE A  NUMBER OPTION")
 print()
 
