@@ -12,7 +12,7 @@ This software entends to make SQL data maniplution esaer to any user, regardless
 
 MySQL Relational Database is an assemblage of relational data that is structured or organized in the form of tables, columns, and rows, where tables represent the objects, columns represent the fields and rows represent the records.
 
-The "Hospital" database is composed of five tables; Doctor, depatment, patient, billing and doctor department tables. The table are one to one and one to many related.
+The "blood_donation_database" database is composed of seven tables; blood_bank, blood_bank_has_staff, donor, patient, staff, staff_department and, staff_has_staff_departement. The table are one to one and one to many related.
 
 # Development Environment
 
